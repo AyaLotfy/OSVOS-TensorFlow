@@ -518,6 +518,7 @@ def _train(dataset, initial_ckpt, supervison, learning_rate, logs_path, max_trai
         if last_ckpt_path is not None and resume_training:
             # Load last checkpoint
             print('Initializing from previous checkpoint...')
+            print('last_ckpt_path',last_ckpt_path)
             saver.restore(sess, last_ckpt_path)
             step = global_step.eval() + 1
         else:
